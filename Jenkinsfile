@@ -1,4 +1,8 @@
 node('nodejs') {
+   parameters {
+        booleanParam(name: "RUN_FRONTEND_TESTS", defaultValue: true)
+   }
+   
    stage('Checkout') {
       git branch: 'main',
       url: 'https://github.com/amodsal/do400-pipelines-control.git'
